@@ -24,7 +24,6 @@ function twoSum(nums, target) {
     map.set(nums[i], i);
   }
 }
-
 twoSum(nums, target);
 
 /**
@@ -51,7 +50,6 @@ function longestStack(strs) {
 
   return prefix;
 }
-
 const r = longestStack(string);
 
 /**
@@ -59,12 +57,18 @@ const r = longestStack(string);
  */
 
 const removeDuplicates = (nums) => {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1]) {
-      nums.splice(i, 1);
-      i--;
+  if (nums.length === 0) return 0;
+
+  let j = 0; // slow pointer
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[j]) {
+      j++;
+      nums[j] = nums[i];
+
     }
   }
-};
 
+  return j + 1;
+};
 const arr = [1, 1, 2];

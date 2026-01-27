@@ -54,4 +54,17 @@ function longestStack(strs) {
 
 const r = longestStack(string);
 
-console.log(r);
+/**
+ * Problem - 03
+ */
+
+const removeDuplicates = (nums) => {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === nums[i + 1]) {
+      nums.splice(i, 1);
+      i--;
+    }
+  }
+};
+
+const arr = [1, 1, 2];
